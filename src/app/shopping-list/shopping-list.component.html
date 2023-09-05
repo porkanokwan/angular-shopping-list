@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-10">
+    <!-- <app-shopping-edit
+      (addnewShopping)="onAddShoppingList($event)"
+      (deleteShopping)="onDeleteShopping($event)"
+    ></app-shopping-edit> -->
+
+    <!-- Use Service -->
+    <!-- <app-shopping-edit></app-shopping-edit> -->
+    <router-outlet></router-outlet>
+    <hr />
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let ingredient of ingredients"
+        [routerLink]="['/shopping-list', ingredient.name, 'edit']"
+        >{{ ingredient.name }} {{ ingredient.amount }}
+      </a>
+    </ul>
+  </div>
+</div>
